@@ -1,0 +1,10 @@
+# mycalories.website llms.txt
+
+> To provide an AI-driven app that helps users track their nutrition, monitor calorie intake, and reach health goals through meal analysis, personalized coaching, and progress tracking.
+
+- [Terms of Service](https://mycalories.website/terms): Outlines terms and conditions for using the My Calories nutrition tracking app.
+- [My Calories Support](https://mycalories.website/support): Provide user support and assistance for the My Calories app.
+- [My Calories App](https://mycalories.website): Promote an AI-powered app for food tracking, nutrition analysis, and personalized diet guidance.
+- [Privacy Policy](https://mycalories.website/privacy): Establishes privacy practices for user data collection, usage, and rights in a nutrition tracking app.
+
+<!-- Make AI-driven visitors stick: add a free AI agent trained on your content at https://sitespeak.ai -->

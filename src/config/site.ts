@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
 
 // APK download — single source of truth.
 // Replace this URL with the real APK distribution location when ready.
-export const APK_DOWNLOAD_URL = 'https://github.com/RahulBongu/mycal/releases/download/v1.0.0/app-release.apk';
+export const APK_DOWNLOAD_URL = 'https://github.com/RahulBongu/mycal/releases/download/v1.0.0/my-calories.apk';
 
 export interface StoreListing {
   name: string;

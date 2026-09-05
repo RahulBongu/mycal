@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   coreMessage: 'Eat smarter. Track effortlessly.',
   domain: 'https://mycalories.app',
   version: '1.8.0',
-  apkSize: '24 MB',
+  apkSize: '70 MB',
   androidVersion: 'Android 8.0+',
   supportEmail: 'rahulbongu30@gmail.com',
   copyrightYear: 2026,

@@ -1,161 +1,473 @@
-MyCal
+# 🍽️ My Calories
 
-A modern, responsive calendar application built with React, TypeScript, Vite, and Tailwind CSS.
+> **AI-powered nutrition tracking, food analysis, and personalized calorie management.**
 
-MyCal is a clean and modern calendar experience designed to make managing dates, events, and schedules simple and intuitive.
+**My Calories** is a modern nutrition and calorie-tracking application designed to make food logging simple, intelligent, and personalized.
 
-✨ Features
+Instead of manually searching through large food databases, the goal is to make nutrition tracking feel effortless — from understanding what is on your plate to tracking calories, macros, meals, progress, and daily goals.
 
-📅 Modern calendar interface
+---
 
-⚡ Fast and responsive UI
+## ✨ Features
 
-🎨 Clean, minimal design
+### 📸 AI Food Scanning
 
-📱 Fully responsive across desktop, tablet, and mobile
+Analyze food using images and turn meals into structured nutrition data.
 
-🧩 Component-based architecture
+* Food image analysis
+* Automatic food identification
+* Estimated serving size
+* Calorie estimation
+* Protein, carbohydrate, and fat estimation
+* Editable food quantities
+* Nutrition information per serving
 
-🔷 TypeScript for type safety
+### 🧮 Personalized Calorie Goals
 
-🎨 Tailwind CSS for styling
+Calculate personalized daily nutrition targets based on your profile and goals.
 
-⚙️ Vite-powered development and builds
+* Daily calorie target
+* BMR calculation
+* TDEE estimation
+* Weight-loss targets
+* Weight-gain targets
+* Maintenance calories
+* Protein targets
+* Macro distribution
 
-🔍 ESLint configuration for code quality
+### 📖 Food Diary
 
-🛠️ Tech Stack
-Technology	Purpose
-React	UI development
-TypeScript	Type-safe JavaScript
-Vite	Development and build tooling
-Tailwind CSS	Styling and responsive design
-ESLint	Code quality and linting
-PostCSS	CSS processing
-📂 Project Structure
+Keep track of everything you eat throughout the day.
+
+* Breakfast
+* Lunch
+* Dinner
+* Snacks
+* Daily calorie totals
+* Macro tracking
+* Meal history
+* Individual food editing
+
+### 🤖 AI Nutrition Coach
+
+Get personalized guidance based on your nutrition data and goals.
+
+The AI coach can help with:
+
+* Calorie questions
+* Macro questions
+* Meal suggestions
+* Weight-management guidance
+* Nutrition recommendations
+* Daily progress analysis
+
+### 🍳 Recipe Maker
+
+Create recipes based on the ingredients you have.
+
+* Add ingredients
+* Specify quantities
+* Calculate recipe nutrition
+* Generate recipes with AI
+* Track calories per serving
+* Log recipes directly into your diary
+
+### 📊 Progress Tracking
+
+Understand your progress over time.
+
+* Weight tracking
+* Weight history
+* Goal progress
+* Calorie history
+* Water tracking
+* Streaks
+* Achievements
+
+### 💧 Water Tracking
+
+Track daily hydration alongside nutrition.
+
+* Daily water goal
+* Water intake logging
+* Progress tracking
+* Hydration history
+
+### 🔐 Authentication & Cloud Sync
+
+Built with Supabase for secure account management and data persistence.
+
+* User authentication
+* Secure database access
+* Cloud-synced nutrition data
+* Persistent user profiles
+
+---
+
+## 🎯 Why My Calories?
+
+Traditional calorie trackers often require users to manually search for foods, enter serving sizes, and calculate nutrition.
+
+**My Calories is built around a simpler workflow:**
+
+```text
+Take a photo
+     ↓
+AI understands the food
+     ↓
+Nutrition is estimated
+     ↓
+Review / edit the serving
+     ↓
+Log the meal
+     ↓
+Track daily progress
+     ↓
+Get personalized guidance
+```
+
+The goal is to make calorie tracking **fast enough to actually use every day.**
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* **React**
+* **TypeScript**
+* **Vite**
+* **React Router**
+* **Tailwind CSS**
+* **Lucide React**
+
+### Backend / Data
+
+* **Supabase**
+* PostgreSQL
+* Supabase Authentication
+
+### AI Architecture
+
+The application is designed around provider-independent AI services, allowing food analysis, coaching, and recipe generation to evolve independently from the frontend.
+
+---
+
+## 🏗️ Architecture
+
+```text
+                    ┌─────────────────────┐
+                    │     My Calories     │
+                    │      Frontend       │
+                    └──────────┬──────────┘
+                               │
+             ┌─────────────────┼─────────────────┐
+             │                 │                 │
+             ▼                 ▼                 ▼
+       ┌──────────┐      ┌──────────┐      ┌──────────┐
+       │ Supabase │      │ AI Layer │      │ Nutrition│
+       │   Auth   │      │          │      │  Engine  │
+       └────┬─────┘      └────┬─────┘      └──────────┘
+            │                 │
+            ▼          ┌──────┼───────┐
+       ┌──────────┐    │      │       │
+       │PostgreSQL│    ▼      ▼       ▼
+       └──────────┘  Food   Coach   Recipes
+                     Vision
+```
+
+The separation between the UI, nutrition calculations, data layer, and AI services makes the project easier to maintain and extend.
+
+---
+
+## 📁 Project Structure
+
+```text
 mycal/
-├── public/              # Static assets
-├── src/                 # Application source code
-├── .bolt/               # Project configuration
-├── index.html           # Application entry point
-├── package.json         # Dependencies and scripts
-├── vite.config.ts       # Vite configuration
-├── tailwind.config.js   # Tailwind configuration
-├── postcss.config.js    # PostCSS configuration
-├── tsconfig.json        # TypeScript configuration
-└── eslint.config.js     # ESLint configuration
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── lib/
+│   ├── hooks/
+│   ├── types/
+│   └── ...
+│
+├── .bolt/
+├── index.html
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.ts
+├── tsconfig.json
+└── README.md
+```
 
-🚀 Getting Started
-Prerequisites
+---
 
-Make sure you have installed:
+## 🚀 Getting Started
 
-Node.js
+### Prerequisites
 
-npm
+Make sure you have:
 
-Installation
+* Node.js installed
+* npm installed
+* A Supabase project
 
-Clone the repository:
+---
 
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/RahulBongu/mycal.git
-
-
-Move into the project directory:
-
 cd mycal
+```
 
+---
 
-Install dependencies:
+### 2. Install dependencies
 
+```bash
 npm install
+```
 
-Development
+---
 
-Start the development server:
+### 3. Configure environment variables
 
+Create a `.env` file in the project root:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+> Never commit private API keys or service-role keys to GitHub.
+
+---
+
+### 4. Start the development server
+
+```bash
 npm run dev
+```
 
+Vite will start the local development server.
 
-The application will be available at the local development URL shown in your terminal.
+---
 
-🏗️ Production Build
+## 🧪 Development Commands
 
-Create an optimized production build:
+### Start development server
 
+```bash
+npm run dev
+```
+
+### Build production version
+
+```bash
 npm run build
+```
 
+### Preview production build
 
-Preview the production build locally:
-
+```bash
 npm run preview
+```
 
-🧹 Code Quality
+### Run ESLint
 
-Run ESLint:
-
+```bash
 npm run lint
+```
 
-📸 Preview
+### Type checking
 
-Add screenshots or a demo GIF here to showcase the application.
+```bash
+npm run typecheck
+```
 
-![MyCal Preview](./public/preview.png)
+---
 
-🌐 Deployment
+## 🔐 Security
 
-MyCal can be deployed to platforms such as:
+My Calories is designed to keep sensitive credentials out of the client application.
 
-Vercel
+### Never expose
 
-Netlify
+```text
+SUPABASE_SERVICE_ROLE_KEY
+Private AI API keys
+Server-side secrets
+Database credentials
+```
 
-GitHub Pages
+Only public client-side configuration should be exposed through `VITE_*` environment variables.
 
-Cloudflare Pages
+Supabase Row Level Security should be enabled for user-owned data.
 
-Build the project with:
+---
 
-npm run build
+## 📱 Core Experience
 
+### Home
 
-Then deploy the generated production output according to your hosting provider's configuration.
+A quick overview of your day:
 
-🤝 Contributing
+* Calories consumed
+* Remaining calories
+* Protein
+* Carbs
+* Fat
+* Water
+* Daily progress
+* Recent meals
 
-Contributions are welcome.
+### Diary
 
-Fork the repository.
+A detailed breakdown of your meals and nutrition.
 
-Create a new branch:
+### Scan
 
-git checkout -b feature/your-feature
+The fastest way to log food using an image.
 
+### Progress
 
-Make your changes.
+Track your body-weight and nutrition journey.
 
-Commit your changes:
+### Coach
 
-git commit -m "Add your feature"
+Ask questions and receive personalized nutrition guidance.
 
+### Profile
 
-Push the branch:
+Manage:
 
-git push origin feature/your-feature
+* Personal information
+* Nutrition goals
+* Weight goals
+* Preferences
+* Account settings
 
+---
 
-Open a Pull Request.
+## 🧠 Nutrition Engine
 
-📄 License
+The application uses a deterministic nutrition calculation layer rather than relying entirely on AI for important calculations.
 
-This project currently does not specify a license.
+A typical calorie calculation flow is:
 
-If you intend to make the project open source, consider adding a license such as MIT.
+```text
+User Profile
+     ↓
+BMR
+     ↓
+Activity Level
+     ↓
+TDEE
+     ↓
+Goal Adjustment
+     ↓
+Daily Calorie Target
+     ↓
+Macro Targets
+```
 
-👨‍💻 Author
+AI can provide estimates and recommendations, while deterministic calculations remain responsible for core nutrition logic wherever possible.
 
-Rahul Bongu
+---
 
-GitHub: @RahulBongu
+## 🤖 AI Food Analysis
 
-⭐ If you find this project useful, consider giving it a star!
+Food recognition is treated as an estimation system rather than a medical-grade measurement system.
+
+A typical scan produces structured information such as:
+
+```json
+{
+  "food": "Chicken Rice Bowl",
+  "estimatedWeight": 350,
+  "calories": 620,
+  "protein": 42,
+  "carbohydrates": 65,
+  "fat": 18,
+  "confidence": 0.87
+}
+```
+
+Users can review and modify the estimated serving size before logging the meal.
+
+---
+
+## 🗺️ Roadmap
+
+### Completed / Core
+
+* [x] Modern nutrition dashboard
+* [x] Food diary
+* [x] Calorie tracking
+* [x] Macro tracking
+* [x] Personalized calorie calculations
+* [x] Weight tracking
+* [x] Water tracking
+* [x] Progress tracking
+* [x] Recipe functionality
+* [x] AI-oriented food scanning architecture
+* [x] Supabase integration
+* [x] Authentication architecture
+
+### Future
+
+* [ ] More accurate food vision models
+* [ ] Barcode database expansion
+* [ ] Larger food database
+* [ ] Improved serving-size detection
+* [ ] Meal recommendations
+* [ ] Weekly AI nutrition reports
+* [ ] Advanced progress analytics
+* [ ] Wearable integrations
+* [ ] Apple Health integration
+* [ ] Google Health Connect integration
+* [ ] Native mobile application
+* [ ] Offline-first logging
+
+---
+
+## ⚠️ Disclaimer
+
+My Calories is intended for **general nutrition tracking and educational purposes**.
+
+AI-generated food recognition and calorie estimates may not always be accurate. Nutrition information should be treated as an estimate and verified when accuracy is important.
+
+My Calories is **not a medical device** and does not replace professional medical or dietary advice.
+
+---
+
+## 👨‍💻 Author
+
+### Rahul Bongu
+
+Building products at the intersection of **AI, software, and ambitious ideas.**
+
+GitHub:
+[RahulBongu](https://github.com/RahulBongu)
+
+---
+
+## ⭐ Support
+
+If you find the project interesting, consider giving the repository a ⭐.
+
+It helps the project get discovered and motivates further development.
+
+---
+
+## 📄 License
+
+This project currently does not specify a public open-source license.
+
+If you plan to make the project open source, consider adding an appropriate license such as MIT, Apache-2.0, or GPL-3.0.

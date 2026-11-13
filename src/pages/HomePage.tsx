@@ -22,15 +22,6 @@ import PhoneMockup from '@/components/PhoneMockup';
 import Reveal from '@/components/Reveal';
 import { useCountUp } from '@/hooks/useReveal';
 import {
-  HomeScreen,
-  ScannerScreen,
-  ScanResultScreen,
-  CoachScreen,
-  RecipesScreen,
-  ProgressScreen,
-  BarcodeScreen,
-} from '@/components/AppScreens';
-import {
   SITE_CONFIG,
   APK_DOWNLOAD_URL,
   FOOD_PHOTOS,
@@ -97,7 +88,7 @@ function Hero() {
             {/* Glow */}
             <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-300/20 blur-3xl" />
             <PhoneMockup width={300}>
-              <HomeScreen />
+              <img src="/screens/home.png" alt="Home dashboard" className="h-full w-full object-cover" />
             </PhoneMockup>
 
             {/* Floating nutrition particles */}
@@ -163,7 +154,7 @@ function ScannerSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-200/20 blur-3xl" />
               <PhoneMockup width={270}>
-                <ScannerScreen foodImage={FOOD_PHOTOS.chicken} />
+                <img src="/screens/scan.png" alt="AI food scanner" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -262,7 +253,7 @@ function TrackingSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-500/20 blur-3xl" />
               <PhoneMockup width={290}>
-                <HomeScreen />
+                <img src="/screens/home.png" alt="Home dashboard" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -284,7 +275,7 @@ function CoachSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-200/20 blur-3xl" />
               <PhoneMockup width={280}>
-                <CoachScreen />
+                <img src="/screens/coach.png" alt="AI Coach" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -375,7 +366,7 @@ function RecipesSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-accent-200/20 blur-3xl" />
               <PhoneMockup width={280}>
-                <RecipesScreen />
+                <img src="/screens/recipes.png" alt="Recipes" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -399,7 +390,7 @@ function BarcodeSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-500/20 blur-3xl" />
               <PhoneMockup width={270}>
-                <BarcodeScreen />
+                <img src="/screens/barcode.png" alt="Barcode scanner" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -474,7 +465,7 @@ function ProgressSection() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-200/20 blur-3xl" />
               <PhoneMockup width={290}>
-                <ProgressScreen />
+                <img src="/screens/progress.png" alt="Progress" className="h-full w-full object-cover" />
               </PhoneMockup>
             </div>
           </Reveal>
@@ -600,13 +591,13 @@ function WhyUs() {
 /* ── Section 10: App Showcase ──────────────────────────────── */
 function Showcase() {
   const screens = [
-    { label: 'Home', component: <HomeScreen /> },
-    { label: 'Scanner', component: <ScannerScreen foodImage={FOOD_PHOTOS.salad} /> },
-    { label: 'Scan Result', component: <ScanResultScreen /> },
-    { label: 'AI Coach', component: <CoachScreen /> },
-    { label: 'Recipes', component: <RecipesScreen /> },
-    { label: 'Progress', component: <ProgressScreen /> },
-    { label: 'Barcode', component: <BarcodeScreen /> },
+    { label: 'Home', image: '/screens/home.png' },
+    { label: 'Scanner', image: '/screens/scan.png' },
+    { label: 'Scan Result', image: '/screens/scan-result.png' },
+    { label: 'AI Coach', image: '/screens/coach.png' },
+    { label: 'Recipes', image: '/screens/recipes.png' },
+    { label: 'Progress', image: '/screens/progress.png' },
+    { label: 'Barcode', image: '/screens/barcode.png' },
   ];
 
   return (
@@ -640,7 +631,9 @@ function Showcase() {
                 animation: `float ${6 + (i % 3)}s ease-in-out infinite`,
               }}
             >
-              <PhoneMockup width={220}>{screen.component}</PhoneMockup>
+              <PhoneMockup width={220}>
+                <img src={screen.image} alt={screen.label} className="h-full w-full object-cover" />
+              </PhoneMockup>
             </div>
             <p className="mt-4 text-sm font-600 text-ink-700">{screen.label}</p>
           </Reveal>

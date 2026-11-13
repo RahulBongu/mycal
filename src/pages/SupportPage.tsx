@@ -1,6 +1,6 @@
 import PageLayout from '@/components/PageLayout';
 import { Link } from 'react-router-dom';
-import { Mail, Download, MessageCircle, Smartphone, FileDown, ChevronRight } from 'lucide-react';
+import { Mail, Download, MessageCircle, FileDown, ChevronRight } from 'lucide-react';
 import { SITE_CONFIG, APK_DOWNLOAD_URL } from '@/config/site';
 
 export default function SupportPage() {

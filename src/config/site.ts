@@ -18,25 +18,6 @@ export const SITE_CONFIG = {
 // Replace this URL with the real APK distribution location when ready.
 export const APK_DOWNLOAD_URL = 'https://github.com/RahulBongu/mycal/releases/download/v1.1.0/My-Calories.apk';
 
-export interface StoreListing {
-  name: string;
-  url: string | null;
-  available: boolean;
-  region?: string;
-  /** Custom badge text shown instead of the default "Coming soon" */
-  badge?: string;
-}
-
-// Store distribution — add new stores here without touching components.
-export const STORES: StoreListing[] = [
-  { name: 'Google Play Store', url: null, available: false, badge: 'Coming in 14 days' },
-  { name: 'APKPure', url: null, available: false },
-  { name: 'Vivo Store', url: null, available: false },
-  { name: 'OPPO Store', url: null, available: false },
-  { name: 'Xiaomi GetApps', url: null, available: false },
-  { name: 'Aptoide', url: null, available: false },
-];
-
 // Food photos used in the scanner showcase (Pexels, license-free).
 export const FOOD_PHOTOS = {
   salad:

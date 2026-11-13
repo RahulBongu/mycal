@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { SITE_CONFIG, STORES, APK_DOWNLOAD_URL } from '@/config/site';
+import { SITE_CONFIG } from '@/config/site';
 import Logo from '@/components/Logo';
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
           </span>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-4">
+        <div className="grid gap-12 lg:grid-cols-3">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5">
@@ -69,31 +69,6 @@ export default function Footer() {
                   Support
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Stores */}
-          <div>
-            <h3 className="font-display text-sm font-600 text-white">Stores</h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li>
-                <a
-                  href={APK_DOWNLOAD_URL}
-                  className="text-ink-400 transition-colors hover:text-brand-400"
-                >
-                  Android APK
-                </a>
-              </li>
-              {STORES.map((store) => (
-                <li key={store.name}>
-                  <span className="text-ink-400">
-                    {store.name}
-                    {store.badge && (
-                      <span className="ml-2 text-xs text-ink-600">{store.badge}</span>
-                    )}
-                  </span>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

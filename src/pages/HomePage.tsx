@@ -33,7 +33,6 @@ import {
 import {
   SITE_CONFIG,
   APK_DOWNLOAD_URL,
-  STORES,
   FOOD_PHOTOS,
 } from '@/config/site';
 
@@ -714,26 +713,6 @@ function DownloadSection() {
             <span>{SITE_CONFIG.apkSize}</span>
             <span className="text-brand-300">•</span>
             <span>{SITE_CONFIG.androidVersion}</span>
-          </div>
-        </Reveal>
-
-        {/* Store buttons */}
-        <Reveal variant="stagger" className="mt-12">
-          <p className="text-sm font-600 text-brand-100">Also available from these stores</p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {STORES.map((store) => (
-              <div
-                key={store.name}
-                className="flex items-center gap-2 rounded-xl border border-white/20 bg-white px-5 py-3 text-sm font-600 text-ink-900 shadow-lg shadow-black/10 transition-all hover:bg-ink-50"
-              >
-                <span>{store.name}</span>
-                {store.badge && (
-                  <span className="rounded-full bg-accent-500 px-2 py-0.5 text-[10px] font-600 text-white">
-                    {store.badge}
-                  </span>
-                )}
-              </div>
-            ))}
           </div>
         </Reveal>
       </div>

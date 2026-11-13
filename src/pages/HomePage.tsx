@@ -24,7 +24,6 @@ import { useCountUp } from '@/hooks/useReveal';
 import {
   SITE_CONFIG,
   APK_DOWNLOAD_URL,
-  FOOD_PHOTOS,
 } from '@/config/site';
 
 /* ── Hero ─────────────────────────────────────────────────── */
